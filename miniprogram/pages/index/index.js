@@ -8,7 +8,7 @@ Page({
 
   onLoad() {
     const app = getApp();
-    if (app.globalData.marks) {
+    if (app.globalData && app.globalData.marks) {
       this.setData({ hasMarks: true, marks: app.globalData.marks });
     }
   },
@@ -16,6 +16,10 @@ Page({
   goToScan() {
     wx.scanCode({
       success: (res) => {
+        if (!res.result) {
+          wx.showToast({ title: '扫码结果为空', icon: 'none' });
+          return;
+        }
         try {
           const data = JSON.parse(res.result);
           getApp().globalData.marks = data.marks;

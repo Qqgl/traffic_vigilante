@@ -1,0 +1,8 @@
+App({
+  globalData: {
+    marks: []
+  },
+
+  onLaunch() {
+  }
+});
