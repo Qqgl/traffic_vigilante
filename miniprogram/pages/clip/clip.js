@@ -61,7 +61,8 @@ Page({
 
   timeToSeconds(timestamp) {
     const t = new Date(timestamp);
-    return t.getHours() * 3600 + t.getMinutes() * 60 + t.getSeconds();
+    const start = new Date(t.toDateString()); // midnight of that day
+    return Math.floor((t - start) / 1000);
   },
 
   onClipStartChange(e) {
@@ -69,20 +70,23 @@ Page({
   },
 
   onClipEndChange(e) {
-    const newEnd = Number(e.detail.value);
-    if (newEnd <= this.data.clipStart) {
-      wx.showToast({ title: '结束时间必须大于开始时间', icon: 'none' });
-      return;
-    }
-    this.setData({ clipEnd: newEnd });
+    this.setData({ clipEnd: Number(e.detail.value) });
   },
 
   onBufferBeforeChange(e) {
-    this.setData({ bufferBefore: Number(e.detail.value) });
+    const newBuffer = Number(e.detail.value);
     const mark = this.data.currentMark;
     if (mark) {
+      const newClipStart = Math.max(0, this.timeToSeconds(mark.timestamp) - newBuffer);
+      let newClipEnd = this.data.clipEnd;
+      // If current clipEnd is now invalid, adjust it
+      if (newClipEnd <= newClipStart) {
+        newClipEnd = newClipStart + 30; // default 30s window
+      }
       this.setData({
-        clipStart: Math.max(0, this.timeToSeconds(mark.timestamp) - this.data.bufferBefore)
+        bufferBefore: newBuffer,
+        clipStart: newClipStart,
+        clipEnd: newClipEnd
       });
     }
   },

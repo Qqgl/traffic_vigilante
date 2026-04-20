@@ -1,0 +1,4 @@
+.scan-page {
+  padding: 100rpx;
+  text-align: center;
+}
