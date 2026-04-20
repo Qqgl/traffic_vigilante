@@ -1,0 +1,24 @@
+<view class="result-page">
+  <view class="success-icon">
+    <text class="icon">✓</text>
+  </view>
+
+  <text class="title">举报包已生成</text>
+  <text class="subtitle">举报编号：{{reportId}}</text>
+
+  <view class="report-summary">
+    <view class="summary-row">
+      <text class="label">违法类型</text>
+      <text class="value">{{violationType}}</text>
+    </view>
+    <view class="summary-row">
+      <text class="label">违法地点</text>
+      <text class="value">{{roadName}}</text>
+    </view>
+  </view>
+
+  <view class="actions">
+    <button type="primary" bindtap="jumpTo12123">打开12123上传</button>
+    <button bindtap="downloadPackage">下载举报包</button>
+  </view>
+</view>
