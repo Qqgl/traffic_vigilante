@@ -1,0 +1,14 @@
+<view class="violation-picker">
+  <text class="picker-title">违法类型</text>
+  <view class="options">
+    <view
+      wx:for="{{options}}"
+      wx:key="id"
+      class="option {{selected === item.id ? 'selected' : ''}}"
+      bindtap="select"
+      data-id="{{item.id}}"
+    >
+      <text>{{item.label}}</text>
+    </view>
+  </view>
+</view>
