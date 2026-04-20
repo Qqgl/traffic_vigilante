@@ -1,0 +1,16 @@
+<view class="container">
+  <view class="header">
+    <text class="title">交通违法举报</text>
+    <text class="subtitle">开车时标记，到目的地举报</text>
+  </view>
+
+  <view class="actions">
+    <button type="primary" bindtap="goToScan">扫码接收</button>
+    <button bindtap="useMockData" class="secondary">使用模拟数据</button>
+  </view>
+
+  <view wx:if="{{hasMarks}}" class="marks-info">
+    <text class="marks-count">已接收 {{marks.length}} 个标记点</text>
+    <button type="default" bindtap="goToClip">开始裁剪视频</button>
+  </view>
+</view>

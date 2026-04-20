@@ -1,0 +1,12 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/scan/scan",
+    "pages/clip/clip",
+    "pages/confirm/confirm",
+    "pages/result/result"
+  ],
+  "window": {
+    "navigationBarTitleText": "交通违法举报"
+  }
+}
