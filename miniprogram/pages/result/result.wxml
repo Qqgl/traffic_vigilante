@@ -19,6 +19,6 @@
 
   <view class="actions">
     <button type="primary" bindtap="jumpTo12123">打开12123上传</button>
-    <button bindtap="downloadPackage">下载举报包</button>
+    <button bindtap="downloadPackage" disabled>下载举报包（开发中）</button>
   </view>
 </view>
