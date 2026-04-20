@@ -1,0 +1,27 @@
+.confirm-page {
+  padding: 20rpx;
+}
+
+.section {
+  background: #f5f5f5;
+  padding: 30rpx;
+  border-radius: 8rpx;
+  margin-bottom: 20rpx;
+}
+
+.section-title {
+  font-size: 28rpx;
+  color: #888;
+  display: block;
+  margin-bottom: 15rpx;
+}
+
+.road-input {
+  background: #fff;
+  padding: 20rpx;
+  border-radius: 4rpx;
+}
+
+.generate-btn {
+  margin-top: 40rpx;
+}

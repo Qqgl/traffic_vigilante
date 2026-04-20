@@ -1,0 +1,30 @@
+<view class="confirm-page">
+  <view class="section">
+    <text class="section-title">路段确认</text>
+    <input
+      value="{{roadNameEditable}}"
+      bindinput="onRoadNameInput"
+      placeholder="请确认或修改道路名称"
+      class="road-input"
+    />
+  </view>
+
+  <view class="section">
+    <text class="section-title">违法时间</text>
+    <text>{{mark.timestamp}}</text>
+  </view>
+
+  <view class="section">
+    <text class="section-title">裁剪范围</text>
+    <text>{{clipStartFormatted}} - {{clipEndFormatted}}</text>
+  </view>
+
+  <view class="section">
+    <violation-type-picker
+      selected="{{violationType}}"
+      bindchange="onViolationTypeChange"
+    />
+  </view>
+
+  <button type="primary" bindtap="generatePackage" class="generate-btn">生成举报包</button>
+</view>
