@@ -1,6 +1,7 @@
 <view class="video-timeline">
   <video
-    id="video"
+    wx:if="{{videoSrc}}"
+    id="video-{{videoSrc}}"
     src="{{videoSrc}}"
     controls
     bindtimeupdate="onVideoTimeUpdate"
@@ -14,7 +15,7 @@
     <slider
       min="0"
       max="100"
-      value="{{currentTime / duration * 100}}"
+      value="{{duration ? currentTime / duration * 100 : 0}}"
       bindchange="onSliderChange"
       class="timeline-slider"
     />
