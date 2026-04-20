@@ -33,19 +33,28 @@ Page({
     const video1File = mark.videoFile;
     const video2File = this.getNextVideoFile(mark);
 
+    // Compute new values first
+    const newClipStart = Math.max(0, this.timeToSeconds(mark.timestamp) - this.data.bufferBefore);
+    const newClipEnd = Math.min(this.timeToSeconds(mark.timestamp) + 30, newClipStart + 60);
+
     this.setData({
       markIndex: index,
       currentMark: mark,
       video1Src: `/${video1File}`,
       video2Src: video2File ? `/${video2File}` : '',
-      clipStart: Math.max(0, this.timeToSeconds(mark.timestamp) - this.data.bufferBefore),
-      clipEnd: Math.min(this.timeToSeconds(mark.timestamp) + 30, this.clipStart + 60)
+      clipStart: newClipStart,
+      clipEnd: newClipEnd
     });
   },
 
   getNextVideoFile(mark) {
-    if (mark.offset > 250) {
-      return 'record_002.mp4';
+    // In production, this should determine the next video file based on the video file list
+    // For now, if offset indicates near end of current video, return next file
+    // The actual implementation would check the videoFiles array from mock data or API
+    if (mark.offset > 250 && mark.videoFile) {
+      // Try to find next video file based on naming convention
+      // This is a simplified version - real implementation would use actual file list
+      return '';
     }
     return '';
   },
@@ -60,7 +69,12 @@ Page({
   },
 
   onClipEndChange(e) {
-    this.setData({ clipEnd: Number(e.detail.value) });
+    const newEnd = Number(e.detail.value);
+    if (newEnd <= this.data.clipStart) {
+      wx.showToast({ title: '结束时间必须大于开始时间', icon: 'none' });
+      return;
+    }
+    this.setData({ clipEnd: newEnd });
   },
 
   onBufferBeforeChange(e) {
