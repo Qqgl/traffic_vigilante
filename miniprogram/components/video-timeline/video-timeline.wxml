@@ -1,0 +1,22 @@
+<view class="video-timeline">
+  <video
+    id="video"
+    src="{{videoSrc}}"
+    controls
+    bindtimeupdate="onVideoTimeUpdate"
+    class="video-player"
+  ></video>
+
+  <view class="timeline-bar">
+    <view class="time-display">
+      <text>{{currentTime}} / {{duration}}</text>
+    </view>
+    <slider
+      min="0"
+      max="100"
+      value="{{currentTime / duration * 100}}"
+      bindchange="onSliderChange"
+      class="timeline-slider"
+    />
+  </view>
+</view>

@@ -1,0 +1,24 @@
+.video-timeline {
+  width: 100%;
+}
+
+.video-player {
+  width: 100%;
+  height: 400rpx;
+  background: #000;
+}
+
+.timeline-bar {
+  padding: 20rpx;
+  background: #fff;
+}
+
+.time-display {
+  font-size: 24rpx;
+  color: #666;
+  margin-bottom: 10rpx;
+}
+
+.timeline-slider {
+  width: 100%;
+}
