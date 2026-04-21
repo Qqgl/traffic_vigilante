@@ -1,28 +1,39 @@
 <view class="result-page">
-  <view class="success-icon">
-    <text class="icon">✓</text>
-  </view>
-
-  <text class="title">视频片段已导出</text>
-  <text class="subtitle">请到蓉e行上传视频并填写举报信息</text>
-
-  <view class="export-summary">
-    <view class="summary-row">
-      <text class="label">违法地点</text>
-      <text class="value">{{roadName}}</text>
+  <block wx:if="{{exportSuccess}}">
+    <view class="success-icon">
+      <text class="icon">✓</text>
     </view>
-    <view class="summary-row">
-      <text class="label">违法时间</text>
-      <text class="value">{{timestamp}}</text>
-    </view>
-    <view class="summary-row">
-      <text class="label">裁剪范围</text>
-      <text class="value">{{clipTimeRange}}</text>
-    </view>
-  </view>
 
-  <view class="actions">
-    <button type="primary" bindtap="jumpToRongEXing">打开蓉e行</button>
-    <button bindtap="goHome">返回首页</button>
-  </view>
+    <text class="title">视频片段已导出</text>
+    <text class="subtitle">请到蓉e行上传视频并填写举报信息</text>
+
+    <view class="export-summary">
+      <view class="summary-row">
+        <text class="label">违法地点</text>
+        <text class="value">{{roadName}}</text>
+      </view>
+      <view class="summary-row">
+        <text class="label">违法时间</text>
+        <text class="value">{{timestamp}}</text>
+      </view>
+      <view class="summary-row">
+        <text class="label">裁剪范围</text>
+        <text class="value">{{clipTimeRange}}</text>
+      </view>
+    </view>
+
+    <view class="actions">
+      <button type="primary" bindtap="jumpToRongEXing">打开蓉e行</button>
+      <button bindtap="goHome">返回首页</button>
+    </view>
+  </block>
+
+  <block wx:else>
+    <view class="error-icon">
+      <text class="icon">!</text>
+    </view>
+    <text class="title">无导出信息</text>
+    <text class="subtitle">请重新进行视频导出流程</text>
+    <button bindtap="goHome" class="home-btn">返回首页</button>
+  </block>
 </view>

@@ -67,3 +67,18 @@
   flex-direction: column;
   gap: 30rpx;
 }
+
+.error-icon {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  background: #ff4d4f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40rpx;
+}
+
+.home-btn {
+  margin-top: 40rpx;
+}

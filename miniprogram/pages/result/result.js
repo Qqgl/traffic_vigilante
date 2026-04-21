@@ -28,8 +28,7 @@ Page({
   },
 
   jumpToRongEXing() {
-    // 成都蓉e行公众号链接，实际使用时替换为正确的链接
-    wx.showToast({ title: '请在微信搜索"蓉e行"公众号', icon: 'none' });
+    wx.showToast({ title: '请在微信搜索"蓉e行"公众号并上传视频', icon: 'none' });
   },
 
   goHome() {
