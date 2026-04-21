@@ -19,12 +19,5 @@
     <text>{{clipStartFormatted}} - {{clipEndFormatted}}</text>
   </view>
 
-  <view class="section">
-    <violation-type-picker
-      selected="{{violationType}}"
-      bindchange="onViolationTypeChange"
-    />
-  </view>
-
-  <button type="primary" bindtap="generatePackage" class="generate-btn">生成举报包</button>
+  <button type="primary" bindtap="exportVideo" class="export-btn">导出视频</button>
 </view>

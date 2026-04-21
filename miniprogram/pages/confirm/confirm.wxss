@@ -22,6 +22,6 @@
   border-radius: 4rpx;
 }
 
-.generate-btn {
+.export-btn {
   margin-top: 40rpx;
 }
