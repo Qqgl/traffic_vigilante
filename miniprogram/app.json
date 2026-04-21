@@ -8,5 +8,8 @@
   ],
   "window": {
     "navigationBarTitleText": "交通违法举报"
+  },
+  "usingComponents": {
+    "violation-type-picker": "./components/violation-type-picker/violation-type-picker"
   }
 }
