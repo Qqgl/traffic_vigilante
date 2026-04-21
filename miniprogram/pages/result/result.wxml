@@ -3,22 +3,26 @@
     <text class="icon">✓</text>
   </view>
 
-  <text class="title">举报包已生成</text>
-  <text class="subtitle">举报编号：{{reportId}}</text>
+  <text class="title">视频片段已导出</text>
+  <text class="subtitle">请到蓉e行上传视频并填写举报信息</text>
 
-  <view class="report-summary">
-    <view class="summary-row">
-      <text class="label">违法类型</text>
-      <text class="value">{{violationType}}</text>
-    </view>
+  <view class="export-summary">
     <view class="summary-row">
       <text class="label">违法地点</text>
       <text class="value">{{roadName}}</text>
     </view>
+    <view class="summary-row">
+      <text class="label">违法时间</text>
+      <text class="value">{{timestamp}}</text>
+    </view>
+    <view class="summary-row">
+      <text class="label">裁剪范围</text>
+      <text class="value">{{clipTimeRange}}</text>
+    </view>
   </view>
 
   <view class="actions">
-    <button type="primary" bindtap="jumpTo12123">打开12123上传</button>
-    <button bindtap="downloadPackage" disabled>下载举报包（开发中）</button>
+    <button type="primary" bindtap="jumpToRongEXing">打开蓉e行</button>
+    <button bindtap="goHome">返回首页</button>
   </view>
 </view>
